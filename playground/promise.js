@@ -14,11 +14,9 @@ var asyncAdd = (a,b)=>{
 asyncAdd(5,'7').then((res)=>{
   console.log(res);
   return asyncAdd(res,'33');
-},(errorMessage)=>{
-  console.log(errorMessage);
 }).then((res)=>{
   console.log('result must be 45',res);
-},(errorMessage)=>{
+}).catch((errorMessage)=>{
   console.log(errorMessage);
 });
 /*Expected output is one errorMessage: 'Arguements must be integers', but we get
